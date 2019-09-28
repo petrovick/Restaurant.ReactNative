@@ -9,6 +9,9 @@ import {
   Image
 } from 'react-native'
 
+import Icon from 'react-native-vector-icons/FontAwesome'
+import Stars from 'components/Stars'
+
 export default class RestaurantRow extends Component {
   state = {
     showInfo: false
@@ -21,14 +24,11 @@ export default class RestaurantRow extends Component {
   }
   render() {
     const {place, index} = this.props
-    place.image && console.log(place.image)
     return (
       <View key={place.name} style={{backgroundColor: index % 2 === 0 ? 'white' : '#F3F3F7'}}>
         <View style={styles.row}>
-          <View style={styles.edges}>
-            <Text>
-              {index + 1}
-            </Text>
+          <View style={styles.stars}>
+            <Stars rating={place.rating} />
           </View>
           <View style={styles.nameAddress}>
             <Text>{place.name}</Text>
@@ -85,6 +85,14 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    padding: 5,
+    minWidth: 50
+  },
+  stars: {
+    flex: 1,
+    alignItems: 'center',
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
     padding: 5,
     minWidth: 50
   },
