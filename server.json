@@ -1,0 +1,31 @@
+
+{
+  "restaurants": [
+    {"name": "React Café", "image1": "src", "image": "/Users/macbook/Cursos/EggHead/Create a React Native App and Run it on the iOS Simulator and Android Emulator/Restaurant/src/images/pizza.png","address": "123 Anywhere St"},
+    {"name": "Fancy Restaurant", "address": "799 Main St"},
+    {"name": "Taco Place", "address": "500 Maple Rd"},
+    {"name": "React Café1", "address": "123 Anywhere St"},
+    {"name": "Fancy Restaurant", "address": "799 Main St"},
+    {"name": "React Café 3", "address": "123 Anywhere St"},
+    {"name": "Fancy Restaurant", "address": "799 Main St"},
+    {"name": "React Café4", "address": "123 Anywhere St"},
+    {"name": "Fancy Restaurant", "address": "799 Main St"},
+    {"name": "React Café5", "address": "123 Anywhere St"},
+    {"name": "Fancy Restaurant", "address": "799 Main St"},
+    {"name": "React Café6", "address": "123 Anywhere St"},
+    {"name": "Fancy Restaurant", "address": "799 Main St"},
+    {"name": "React Café7", "address": "123 Anywhere St"},
+    {"name": "Fancy Restaurant", "address": "799 Main St"},
+    {"name": "React Café7", "address": "123 Anywhere St"},
+    {"name": "Fancy Restaurant", "address": "799 Main St"},
+    {"name": "React Café8", "address": "123 Anywhere St"},
+    {"name": "Fancy Restaurant", "address": "799 Main St"},
+    {"name": "React Café9", "address": "123 Anywhere St"},
+    {"name": "Fancy Restaurant", "address": "799 Main St"},
+    {"name": "React Café0", "address": "123 Anywhere St"},
+    {"name": "Fancy Restaurant", "address": "799 Main St"},
+    {"name": "React Café20", "address": "123 Anywhere St"},
+    {"name": "React Café21", "address": "123 Anywhere St"},
+    {"name": "Fancy Restaurant", "address": "799 Main St"}
+  ]
+}
