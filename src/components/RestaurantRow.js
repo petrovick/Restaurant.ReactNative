@@ -9,18 +9,19 @@ import {
   Image
 } from 'react-native'
 
-import Icon from 'react-native-vector-icons/FontAwesome'
+import {withNavigation} from 'react-navigation'
+
+//import Icon from 'react-native-vector-icons/FontAwesome'
 import Stars from 'components/Stars'
 
-export default class RestaurantRow extends Component {
+class RestaurantRow extends Component {
   state = {
     showInfo: false
   }
 
   infoPressed = () => {
-    this.setState({
-      showInfo: !this.state.showInfo
-    })
+    //this.setState({showInfo: !this.state.showInfo})
+    this.props.navigation.navigate('Info')
   }
   render() {
     const {place, index} = this.props
@@ -125,3 +126,5 @@ const styles = StyleSheet.create({
     borderRadius: 4
   }
 })
+
+export default withNavigation(RestaurantRow)
