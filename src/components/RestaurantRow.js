@@ -15,13 +15,17 @@ import {withNavigation} from 'react-navigation'
 import Stars from 'components/Stars'
 
 class RestaurantRow extends Component {
+
   state = {
     showInfo: false
   }
 
   infoPressed = () => {
     //this.setState({showInfo: !this.state.showInfo})
-    this.props.navigation.navigate('Info')
+    this.props.navigation.navigate('Info',
+    {
+      place: this.props.place
+    })
   }
   render() {
     const {place, index} = this.props

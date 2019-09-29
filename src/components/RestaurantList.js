@@ -10,7 +10,7 @@ import {
   Image
 } from 'react-native';
 
-import {createStackNavigator} from 'react-navigation';
+import {withNavigation} from 'react-navigation';
 
 import axios from 'axios'
 
@@ -19,6 +19,11 @@ import RestaurantRow from 'components/RestaurantRow'
 import PizzaImage from 'images/pizza.png'
 
 class RestaurantList extends Component {
+
+  static navigationOptions = {
+    header: null
+  }
+
   state = {
     search: null,
     restaurants: []
@@ -27,14 +32,13 @@ class RestaurantList extends Component {
   componentDidMount() {
     axios.get('http://localhost:3000/restaurants')
       .then(result => this.setState({restaurants: result.data}))
-    
   }
 
   render() {
     return (
       <View style={{
         flex: 1,
-
+        backgroundColor: '#FFFFFF'
       }}>
         <View style={{
             marginTop: 30,
@@ -81,4 +85,4 @@ const styles = StyleSheet.create({
     backgroundColor: '#F5F5F5'
   }
 });
-export default RestaurantList
+export default withNavigation(RestaurantList)
