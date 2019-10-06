@@ -1,31 +1,29 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 
-import { 
-  View, 
+import {
+  View,
   Text,
-  ScrollView, 
-  Image, 
-  StyleSheet, 
-  TouchableOpacity 
+  ScrollView,
+  Image,
+  StyleSheet,
+  TouchableOpacity,
 } from 'react-native';
 
 // import { Container } from './styles';
-import Stars from 'components/Stars'
+import Stars from 'components/Stars';
 
 export default class RestaurantInfo extends Component {
-
   static navigationOptions = {
-    title: 'Restaurant Info'
-  }
+    title: 'Restaurant Info',
+  };
 
   addReview = () => {
     this.props.navigation.navigate('AddReview');
-  }
+  };
 
   render() {
-    
-    const place = this.props.navigation.getParam('place')
-    
+    const place = this.props.navigation.getParam('place');
+
     return (
       <ScrollView stlye={styles.root}>
         <View style={styles.infoHeader}>
@@ -38,22 +36,22 @@ export default class RestaurantInfo extends Component {
             resizeMode="contain"
           />
           */}
-          <Image 
-              source={require('images/pizza.png')} 
-              style={styles.image}
-              resizeMode="contain"
-            />
+          <Image
+            source={require('images/pizza.png')}
+            style={styles.image}
+            resizeMode="contain"
+          />
           <View style={styles.info}>
-          <Text style={styles.name}>{place.name}</Text>
-          <Text style={styles.address}>{place.address}</Text>
-          <Stars rating={place.rating} />
-          <TouchableOpacity style={styles.button} onPress={this.addReview}>
-            <Text style={styles.buttonText}>Add Review</Text>
-          </TouchableOpacity>
+            <Text style={styles.name}>{place.name}</Text>
+            <Text style={styles.address}>{place.address}</Text>
+            <Stars rating={place.rating} />
+            <TouchableOpacity style={styles.button} onPress={this.addReview}>
+              <Text style={styles.buttonText}>Add Review</Text>
+            </TouchableOpacity>
           </View>
         </View>
       </ScrollView>
-    )
+    );
   }
 }
 
@@ -63,22 +61,22 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFF',
   },
   infoHeader: {
-    flexDirection: 'row'
+    flexDirection: 'row',
   },
   info: {
-    marginTop: 20
+    marginTop: 20,
   },
   name: {
-    fontSize: 24
+    fontSize: 24,
   },
   address: {
     color: 'grey',
-    marginBottom: 5
+    marginBottom: 5,
   },
   image: {
     width: 100,
     height: 100,
-    margin: 20
+    margin: 20,
   },
   button: {
     borderWidth: 1,
@@ -86,11 +84,11 @@ const styles = StyleSheet.create({
     borderRadius: 14,
     paddingHorizontal: 10,
     paddingVertical: 3,
-    backgroundColor: '#fff'
+    backgroundColor: '#fff',
   },
   buttonText: {
     color: '#0066CC',
     fontSize: 12,
-    textAlign: 'center'
+    textAlign: 'center',
   },
-})
+});

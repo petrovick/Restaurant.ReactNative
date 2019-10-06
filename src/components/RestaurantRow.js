@@ -1,36 +1,36 @@
-import React, {Component} from 'react'
+import React, {Component} from 'react';
 import {
-  StyleSheet, 
-  View, 
-  Text, 
-  TouchableOpacity, 
-  TouchableHighlight, 
-  TouchableWithoutFeedback, 
-  Image
-} from 'react-native'
+  StyleSheet,
+  View,
+  Text,
+  TouchableOpacity,
+  TouchableHighlight,
+  TouchableWithoutFeedback,
+  Image,
+} from 'react-native';
 
-import {withNavigation} from 'react-navigation'
+import {withNavigation} from 'react-navigation';
 
 //import Icon from 'react-native-vector-icons/FontAwesome'
-import Stars from 'components/Stars'
+import Stars from 'components/Stars';
 
 class RestaurantRow extends Component {
-
   state = {
-    showInfo: false
-  }
+    showInfo: false,
+  };
 
   infoPressed = () => {
     //this.setState({showInfo: !this.state.showInfo})
-    this.props.navigation.navigate('Info',
-    {
-      place: this.props.place
-    })
-  }
+    this.props.navigation.navigate('Info', {
+      place: this.props.place,
+    });
+  };
   render() {
-    const {place, index} = this.props
+    const {place, index} = this.props;
     return (
-      <View key={place.name} style={{backgroundColor: index % 2 === 0 ? 'white' : '#F3F3F7'}}>
+      <View
+        key={place.name}
+        style={{backgroundColor: index % 2 === 0 ? 'white' : '#F3F3F7'}}>
         <View style={styles.row}>
           <View style={styles.stars}>
             <Stars rating={place.rating} />
@@ -41,19 +41,16 @@ class RestaurantRow extends Component {
           </View>
 
           <View style={styles.edges}>
-
-            <TouchableHighlight onPress={this.infoPressed}
+            <TouchableHighlight
+              onPress={this.infoPressed}
               style={styles.button}
               underlayColor="#5398DC">
               <Text style={styles.buttonText}>Info</Text>
             </TouchableHighlight>
-            
           </View>
-
         </View>
 
-        {
-          this.state.showInfo &&
+        {this.state.showInfo && (
           <View style={styles.info}>
             <Text>Resturant Info</Text>
             {/*<Image 
@@ -64,34 +61,31 @@ class RestaurantRow extends Component {
                 }}
               resizeMode="stretch" 
             />*/}
-            <Image 
-              source={require('images/pizza.png')} 
+            <Image
+              source={require('images/pizza.png')}
               style={{
-                  width: 100,
-                  height: 100
-                }}
+                width: 100,
+                height: 100,
+              }}
               resizeMode="contain"
             />
           </View>
-        }
+        )}
       </View>
-
-
-    )
+    );
   }
 }
 
-
 const styles = StyleSheet.create({
   row: {
-    flexDirection: 'row'
+    flexDirection: 'row',
   },
   edges: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
     padding: 5,
-    minWidth: 50
+    minWidth: 50,
   },
   stars: {
     flex: 1,
@@ -99,14 +93,14 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'flex-start',
     padding: 5,
-    minWidth: 50
+    minWidth: 50,
   },
   nameAddress: {
     flexDirection: 'column',
-    flex: 8
+    flex: 8,
   },
   addressText: {
-    color: 'grey'
+    color: 'grey',
   },
   button: {
     borderWidth: 1,
@@ -114,11 +108,11 @@ const styles = StyleSheet.create({
     borderRadius: 14,
     paddingHorizontal: 10,
     paddingVertical: 3,
-    backgroundColor: '#fff'
+    backgroundColor: '#fff',
   },
   buttonText: {
     color: '#0066CC',
-    fontSize: 12
+    fontSize: 12,
   },
   info: {
     marginHorizontal: 40,
@@ -127,8 +121,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     borderWidth: 1,
     borderColor: '#ddd',
-    borderRadius: 4
-  }
-})
+    borderRadius: 4,
+  },
+});
 
-export default withNavigation(RestaurantRow)
+export default RestaurantRow;

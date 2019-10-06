@@ -39,6 +39,8 @@ target 'Restaurant' do
 
   pod 'RNReanimated', :path => '../node_modules/react-native-reanimated'
 
+  pod 'react-native-splash-screen', :path => '../node_modules/react-native-splash-screen'
+
   target 'RestaurantTests' do
     inherit! :search_paths
     # Pods for testing
